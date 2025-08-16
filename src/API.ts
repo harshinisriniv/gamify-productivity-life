@@ -5,9 +5,9 @@ const CLAUDE_API_KEY = import.meta.env.VITE_CLAUDE_API_KEY;
 export async function getClaudeResponse(prompt: string) {
   try {
     const response = await axios.post(
-      "https://api.anthropic.com/v1/complete", // Claude endpoint
+      "https://api.anthropic.com/v1/complete", 
       {
-        model: "claude-2", // or whatever model you have access to
+        model: "claude-2", 
         prompt: prompt,
         max_tokens_to_sample: 150,
         stop_sequences: ["\n\nHuman:"],
@@ -20,7 +20,7 @@ export async function getClaudeResponse(prompt: string) {
       }
     );
 
-    // Claude responds in response.data.completion
+    
     return response.data.completion;
   } catch (err) {
     console.error("Claude API error:", err);

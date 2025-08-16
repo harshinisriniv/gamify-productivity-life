@@ -34,7 +34,6 @@ export default function App() {
     "Creativity",
   ];
 
-  // Load user data from Firebase
   useEffect(() => {
     if (!user) return;
 
@@ -76,7 +75,7 @@ export default function App() {
     fetchUserData();
   }, [user]);
 
-  // Reset completed status if task changes
+
   const handleTaskChange = (index: number, value: string) => {
     const updatedTasks = [...tasks];
     const oldTask = updatedTasks[index];
@@ -84,7 +83,7 @@ export default function App() {
     setTasks(updatedTasks);
 
     const updatedCompleted = [...completed];
-    if (value !== oldTask) updatedCompleted[index] = false; // new task is uncompleted
+    if (value !== oldTask) updatedCompleted[index] = false; 
     setCompleted(updatedCompleted);
   };
 
@@ -136,14 +135,13 @@ export default function App() {
       newXp += 10;
       updatedSkillXp[skill] = (updatedSkillXp[skill] + 10);
       if (updatedSkillXp[skill] > 50) {
-        updatedSkillXp[skill] = 0; // reset to 0 when exceeding 50
+        updatedSkillXp[skill] = 0; 
       }
       if (newXp >= 100) {
         newXp = 0;
         newLevel += 1;
       }
     } else {
-      // Uncompleting task
       newXp -= 10;
       updatedSkillXp[skill] = Math.max(updatedSkillXp[skill] - 10, 0);
       if (newXp < 0) {
@@ -170,7 +168,6 @@ export default function App() {
     });
   };
 
-  // Generate Wizard Challenge (calls Claude API)
   const fetchWizardChallenge = async () => {
     if (!tasks.length) return;
 
@@ -185,7 +182,7 @@ export default function App() {
     try {
       const client = new Anthropic({ 
         apiKey: import.meta.env.VITE_CLAUDE_API_KEY,
-        dangerouslyAllowBrowser: true // Required for browser usage
+        dangerouslyAllowBrowser: true
       });
 
       const response = await client.messages.create({
@@ -226,10 +223,12 @@ export default function App() {
 
   return (
     <>
-     <div className="welcome-message">
-  WELCOME,<br />
-  HARSHINI SRINIVASAN!
-</div>
+     
+    <div className="welcome-message">
+      WELCOME,
+      <br />
+      {user.toUpperCase()}!
+    </div>
 
       <div className="skills-wrapper">
         <img src="/skills.png" alt="Pixel Art" className="pixel-art" />
@@ -271,14 +270,14 @@ export default function App() {
             <p>{wizardChallenge}</p>
             <button
               onClick={async () => {
-                let newXp = xp + 10; // changed from 30 to 10
+                let newXp = xp + 10; 
                 let newLevel = level;
                 const updatedSkillXp = { ...skillXp };
                 const skill = strengths[currentChallengeIndex];
 
                 updatedSkillXp[skill] = (updatedSkillXp[skill] + 10);
                 if (updatedSkillXp[skill] > 50) {
-                  updatedSkillXp[skill] = 0; // reset to 0 when exceeding 50
+                  updatedSkillXp[skill] = 0; 
                 }
                 
                 if (newXp >= 100) {
