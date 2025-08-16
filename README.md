@@ -21,5 +21,3 @@ Frontend: React + TypeScript
 Backend / Auth: Firebase
 
 
-
-# gamify-productivity-life
