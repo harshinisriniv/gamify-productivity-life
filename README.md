@@ -16,7 +16,8 @@ Firebase Authentication – Secure login with Firebase.
 
 Cloud Storage – Sync progress across devices.
 
-#Tech Stack
+
+# Tech Stack
 Frontend: React + TypeScript 
 Backend / Auth: Firebase
 
