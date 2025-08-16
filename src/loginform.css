@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.login-username {
+  position: absolute;      
+  top: 45%;                
+  left: 54.8%;             
+  transform: translate(-50%, -50%);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 5px;
+  color: #A65D51;
+  background: none;
+  border: none;
+  outline: none;
+  width: 100px;            
+  caret-color: #A65D51;
+  transition: color 0.2s;  /* smooth color change */
+}
+
+.login-username::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.login-username:hover {
+  color: #A65D51;           /* color when hovered */
+}
+
+.login-password {
+  position: absolute;      
+  top: 47.9%;                
+  left: 54.8%;               
+  transform: translate(-50%, -50%);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 5px;
+  color: white;
+  background: none;
+  border: none;
+  outline: none;
+  width: 100px;            
+  caret-color: white;
+  transition: color 0.2s;
+}
+
+.login-password::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.login-password:hover {
+  color: #A65D51;
+}
+
+.login-button {
+  position: absolute;      
+  top: 52.5%;                
+  left: 53.5%;               
+  transform: translate(-50%, -50%);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.login-button:hover {
+  color: #ffcc00;
+}
